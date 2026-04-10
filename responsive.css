@@ -67,7 +67,7 @@
         /* border: 10px solid red; */
         display: flex;
         /* width: 53%; */
-        height: 10vh;
+        height: 6vh;
         top: 60px;
         left: 0px;
         transform: translateY(0);
@@ -93,15 +93,15 @@
 
 
     .navbar img {
-        width: 10%;
+        width: 18%;
         height: 10%;
     }
 
     .logo {
         width: 30%;
-        font-size: 20px;
+        font-size: 18px;
         font-style: normal;
-        font-family: serif;
+        /* font-family: serif; */
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -126,20 +126,20 @@
     }
 
     .logo span {
-        color: rgb(0, 0, 0);
+        /* color: rgb(0, 0, 0); */
         padding-left: 5px;
 
     }
 
     .logo-sub {
-        font-size: 12px;
-        color: black;
-        font-family: 'Times New Roman', Times, serif;
+        font-size: 10px;
+        /* color: black; */
+        /* font-family: 'Times New Roman', Times, serif; */
         font-weight: 400;
     }
 
     .nav-links li a {
-        color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
         text-decoration: none;
         display: flex;
         flex-direction: row;
@@ -166,8 +166,37 @@
     /* --------------------------------------- */
 
     .hero-video {
+        /* border: 5px solid rgb(0, 13, 255); */
         width: 100%;
-        height: 30vh;
+        height: 22vh;
+        /* background-color: beige; */
+    }
+
+
+    .video-container {
+        /* border: 2px solid rgb(166, 67, 67); */
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        /* border: 5px solid rgb(0, 251, 255); */
+
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        width: 177.77vh;
+        /* 16:9 ratio */
+        height: 100vh;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        /* disables click */
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
 
@@ -210,8 +239,9 @@
     /* ________________________________ */
 
     .about-section {
-        margin-top: 0px;
+        margin-top: -8vh;
         padding: 16px 0px;
+        /* border: 2px solid red; */
     }
 
     .about-container {
