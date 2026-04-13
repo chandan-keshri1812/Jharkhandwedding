@@ -1,4 +1,4 @@
-console.log("Hello, world!");
+// console.log("Hello, world!");
 
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -144,5 +144,129 @@ boxes.forEach(box => {
         box.classList.add("active");
     });
 });
-// --------------------------
 
+
+// --------------------------
+function changeTheme(theme) {
+    document.body.className = theme;
+}
+
+
+//  service section 
+const servicecards = document.querySelectorAll(".service-card");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.2 });
+
+servicecards.forEach(card => {
+    observer.observe(card);
+});
+
+
+
+
+// ----------------------------
+//  why choose us 
+const whyCards = document.querySelectorAll(".why-card");
+
+const whyObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.2 });
+
+whyCards.forEach(card => {
+    whyObserver.observe(card);
+});
+
+
+// _______________________
+
+const track = document.querySelector(".testimonial-track");
+const cardss = document.querySelectorAll(".testimonial-card");
+
+let index = 0;
+
+function slideTestimonials() {
+    index++;
+    if (index >= cardss.length) index = 0;
+
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+setInterval(slideTestimonials, 3000);
+
+/* Scroll Animation */
+const observers = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observers.observe(card));
+
+
+// video showcase 
+
+const videoCards = document.querySelectorAll(".video-card");
+const modal = document.getElementById("videoModal");
+const iframe = document.getElementById("videoFrame");
+const closeBtn = document.querySelector(".close-btn");
+
+/* Open Modal */
+videoCards.forEach(card => {
+  card.addEventListener("click", () => {
+    iframe.src = card.getAttribute("data-video");
+    modal.classList.add("active");
+  });
+});
+
+/* Close Modal */
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+  iframe.src = "";
+});
+
+/* Close on outside click */
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+    iframe.src = "";
+  }
+});
+
+/* Scroll Animation */
+const vsobserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+videoCards.forEach(card => vsobserver.observe(card));
+
+
+
+//  process 
+const steps = document.querySelectorAll(".process-step");
+
+const processObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+steps.forEach(step => processObserver.observe(step));
