@@ -2,6 +2,55 @@
 
 @media(max-width: 768px) {
 
+    /* ================= RESET & BASE ================= */
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Prevent horizontal scroll */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    /* Better font rendering */
+    body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Images & media responsive */
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+        /* display: block; */
+    }
+
+    /* Remove default styles */
+    ul,
+    ol {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Buttons fix */
+    button {
+        cursor: pointer;
+        border: none;
+    }
+
     /* ______________________________ */
 
 
@@ -265,6 +314,20 @@
 
     /* .hero-div {} */
 
+    /*  vidoe show case  */
+    .video-container iframe {
+        height: 250px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    /* ___________________ service se c */
+    .section-title {
+        font-size: 2rem;
+    }
+
     /* _____________________________ */
     .gallery-title {
 
@@ -278,10 +341,23 @@
 
     }
 
+    /*  */
+    .vssection-title {
+        font-size: 2.2rem;
+    }
+
+    .video-wrapper iframe {
+        height: 180px;
+    }
+
+    /* ___________________ */
+    .section-title-choose {
+        font-size: 2.2rem;
+    }
 
     /* _______________________ */
     .package-section {
-        border: 2px solid red;
+        /* border: 2px solid red; */
     }
 
     .package-title {
@@ -313,4 +389,65 @@
         width: 80%;
     }
 
+
+    /* __________________ */
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+
+
+    /* process sec */
+
+    .process-timeline {
+        flex-direction: column;
+    }
+
+    .process-timeline::before {
+        width: 4px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .process-timeline::after {
+        width: 4px;
+        height: 0%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        animation: glowLineVertical 4s infinite linear;
+    }
+
+    @keyframes glowLineVertical {
+        0% {
+            height: 0%;
+        }
+
+        100% {
+            height: 100%;
+        }
+    }
+
+    .process-step {
+        max-width: 100%;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        bottom: 12px;
+        right: 12px;
+    }
 }
