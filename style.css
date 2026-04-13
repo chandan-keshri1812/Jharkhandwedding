@@ -743,7 +743,7 @@ button:hover {
   color: var(--text);
   text-align: center;
 
-  border: 5px solid red;
+  /* border: 5px solid red; */
 }
 
 .section-title {
@@ -1142,7 +1142,7 @@ button:hover {
 
 .process {
   padding: 100px 20px;
-  background: var(--bg-main);
+  background: var(--bg-light);
   color: var(--text-main);
   text-align: center;
 }
