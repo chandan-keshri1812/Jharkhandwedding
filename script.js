@@ -1,4 +1,4 @@
-// console.log("Hello, world!");
+console.log("Hello, world!");
 
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -15,6 +15,7 @@ window.onscroll = () => {
 
 
 
+console.log("about section start, ");
 
 // /_________________________________
 
@@ -29,111 +30,10 @@ window.addEventListener("scroll", () => {
 });
 // /_____________________________
 
-const cards = document.querySelectorAll(".card");
-const title = document.getElementById("detail-title");
-const desc = document.getElementById("detail-desc");
-const bg = document.getElementById("bgBlur");
-
-let current = 0;
-let startX = 0;
-let isDragging = false;
-let autoSlide;
-
-/* UPDATE UI */
-function updateCarousel() {
-    cards.forEach((card, index) => {
-        card.className = "card";
-
-        if (index === current) {
-            card.classList.add("active");
-        } else if (index === current - 1) {
-            card.classList.add("left1");
-        } else if (index === current - 2) {
-            card.classList.add("left2");
-        } else if (index === current + 1) {
-            card.classList.add("right1");
-        } else if (index === current + 2) {
-            card.classList.add("right2");
-        }
-    });
-
-    /* UPDATE DETAILS */
-    const activeCard = cards[current];
-    title.innerText = activeCard.dataset.title;
-    desc.innerText = activeCard.dataset.desc;
-
-    /* UPDATE BACKGROUND */
-    const img = activeCard.querySelector("img").src;
-    bg.style.backgroundImage = `url(${img})`;
-}
-
-/* NEXT / PREV */
-function next() {
-    current = (current + 1) % cards.length;
-    updateCarousel();
-}
-function prev() {
-    current = (current - 1 + cards.length) % cards.length;
-    updateCarousel();
-}
-
-/* AUTO SLIDE */
-function startAuto() {
-    autoSlide = setInterval(next, 3000);
-}
-function stopAuto() {
-    clearInterval(autoSlide);
-}
-
-/* DRAG / SWIPE */
-const gallery = document.getElementById("gallery");
-
-gallery.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    stopAuto();
-});
-
-gallery.addEventListener("mouseup", (e) => {
-    if (!isDragging) return;
-    let diff = e.clientX - startX;
-
-    if (diff > 50) prev();
-    else if (diff < -50) next();
-
-    isDragging = false;
-    startAuto();
-});
-
-/* TOUCH SUPPORT */
-gallery.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-    stopAuto();
-});
-
-gallery.addEventListener("touchend", (e) => {
-    let diff = e.changedTouches[0].clientX - startX;
-
-    if (diff > 50) prev();
-    else if (diff < -50) next();
-
-    startAuto();
-});
-
-/* CLICK */
-cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-        current = index;
-        updateCarousel();
-    });
-});
-
-/* INIT */
-updateCarousel();
-startAuto();
-
 
 // ------------------
+console.log("package box section start, ");
+
 const boxes = document.querySelectorAll(".package-box");
 
 boxes.forEach(box => {
@@ -153,6 +53,8 @@ function changeTheme(theme) {
 
 
 //  service section 
+console.log("service section start, ");
+
 const servicecards = document.querySelectorAll(".service-card");
 
 const observer = new IntersectionObserver(entries => {
@@ -171,6 +73,8 @@ servicecards.forEach(card => {
 
 
 // ----------------------------
+console.log("why chooose us section start, ");
+
 //  why choose us 
 const whyCards = document.querySelectorAll(".why-card");
 
@@ -188,6 +92,8 @@ whyCards.forEach(card => {
 
 
 // _______________________
+console.log("testimonial section start, ");
+
 
 const track = document.querySelector(".testimonial-track");
 const cardss = document.querySelectorAll(".testimonial-card");
@@ -198,7 +104,7 @@ function slideTestimonials() {
     index++;
     if (index >= cardss.length) index = 0;
 
-    const cardWidth = cards[0].offsetWidth + 20;
+    const cardWidth = cardss[0].offsetWidth + 20;
     track.style.transform = `translateX(-${index * cardWidth}px)`;
 }
 
@@ -213,10 +119,14 @@ const observers = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.2 });
 
-cards.forEach(card => observers.observe(card));
+cardss.forEach(card => observers.observe(card));
 
 
+
+// --------------------------------------------
 // video showcase 
+console.log("video showcase section start, ");
+
 
 const videoCards = document.querySelectorAll(".video-card");
 const modal = document.getElementById("videoModal");
@@ -225,48 +135,118 @@ const closeBtn = document.querySelector(".close-btn");
 
 /* Open Modal */
 videoCards.forEach(card => {
-  card.addEventListener("click", () => {
-    iframe.src = card.getAttribute("data-video");
-    modal.classList.add("active");
-  });
+    card.addEventListener("click", () => {
+        iframe.src = card.getAttribute("data-video");
+        modal.classList.add("active");
+    });
 });
+
+
+console.log("video  middle showcase section start, ");
 
 /* Close Modal */
 closeBtn.addEventListener("click", () => {
-  modal.classList.remove("active");
-  iframe.src = "";
+    modal.classList.remove("active");
+    iframe.src = "";
 });
 
 /* Close on outside click */
 modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("active");
-    iframe.src = "";
-  }
+    if (e.target === modal) {
+        modal.classList.remove("active");
+        iframe.src = "";
+    }
 });
+
+console.log("video 2nd midddl section start, ");
+
 
 /* Scroll Animation */
 const vsobserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
 }, { threshold: 0.2 });
 
 videoCards.forEach(card => vsobserver.observe(card));
 
 
+// -------------------------------------------
+//  process  section 
+console.log("process section start, ");
 
-//  process 
 const steps = document.querySelectorAll(".process-step");
 
 const processObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
 }, { threshold: 0.2 });
 
 steps.forEach(step => processObserver.observe(step));
+console.log("hello chandan")
+
+
+
+// --------------------------------------------
+//  galley section for photo
+console.log("gallecy sec slide  section start, ");
+
+const tracksec = document.querySelector(".gallery-tracksec");
+
+let speed = 1;
+
+function animate() {
+    tracksec.style.transform = `translateX(-${speed}px)`;
+    speed += 0.3;
+    requestAnimationFrame(animate);
+}
+
+// Optional (uncomment if you want JS control instead of CSS)
+animate();
+
+
+// --------------------------
+
+
+
+//  call to action section
+
+console.log("call to action  section start, ");
+
+// Set target date (EDIT THIS)
+const targetDate1 = new Date("2026-04-20T23:59:59").getTime();
+// console.log("hello chandan")
+console.log(targetDate1);
+
+const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = targetDate1 - now;
+
+    if (diff <= 0) {
+        clearInterval(timer);
+        document.querySelector(".countdowncta").innerHTML = "Offer Expired!";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+}, 1000);
+
+
+
+
+// -------------------------------------About section  -----------------------------
+

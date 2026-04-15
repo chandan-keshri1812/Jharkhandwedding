@@ -1,0 +1,218 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+ 
+
+  /* __________________________ */
+  /* 🌟 Brand Colors */
+  --primary: #C8A96A;
+  /* Gold */
+  --primary-dark: #A8894F;
+  /* Hover gold */
+  --primary-light: #E6D3A3;
+  /* Soft gold */
+
+  /* 🖤 Neutrals */
+  --secondary: #111111;
+  /* Dark sections */
+  --accent: #C8A96A;
+  /* Accent same as gold */
+
+  /* 🎨 Backgrounds */
+  --bg-main: #F5F1E8;
+  /* Main cream bg */
+  --bg-light: #FFFFFF;
+  /* Section bg */
+  --bg-dark: #111111;
+  /* Dark section */
+  --bg-card: #1A1A1A;
+  /* Dark cards */
+
+  /* ✍️ Text */
+  --text-main: #2B2B2B;
+  /* Main text */
+  --text-dark: #000000;
+  --text-light: #FFFFFF;
+  --text-muted: #6B6B6B;
+  /* Secondary text */
+  --text-fade: #A0A0A0;
+  /* Light text */
+
+
+  /* ______________________________ */
+
+
+
+  /* GRADIENT */
+  --gradient-main: linear-gradient(135deg, #C8A96A, #A8894F);
+
+  /* FONTS */
+  /* font-family: "Playfair Display", serif; */
+  /* font-family: "Poppins", sans-serif; */
+
+  /* --font-primary: "Lora", serif;
+  --font-heading: "Great Vibes", cursive;
+  --font-basic: sans-serif; */
+  --font-primary: "Poppins", sans-serif;
+  --font-heading: "Playfair Display", serif;
+  --font-basic: sans-serif;
+
+  /* SPACING */
+  --padding: 10px;
+  --radius: 20px;
+
+  /* SHADOW */
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+  /* TRANSITION */
+  --transition: 0.3s ease;
+}
+
+
+.jw-pricing-section {
+  padding: 100px 20px;
+  background: url('./IMAGE\ \ \(5\).jpeg') center/cover no-repeat;
+  position: relative;
+}
+
+.jw-pricing-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.jw-pricing-container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  color: var(--text-main);
+}
+.jw-pricing-container h2{
+   font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+/* TOGGLE */
+.jw-toggle {
+  margin-bottom: 40px;
+  /* border: 2px solid red; */
+  display: flex;
+}
+
+.jw-toggle button {
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 30px;
+  /* background: var(--secondary); */
+  color: #fff;
+  cursor: pointer;
+}
+
+.jw-toggle button.active {
+  background: #6B6B6B;;
+   border-radius: 30px;
+  color: black;
+    /* color: #fff; */
+
+}
+
+/* GRID */
+.jw-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.jw-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  position: relative;
+}
+
+.jw-card:hover {
+  transform: translateY(-10px);
+}
+
+/* RECOMMENDED */
+.jw-card.recommended {
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+}
+
+.jw-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--primary);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+/* PRICE */
+.jw-price {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: var(--primary);
+}
+
+/* FEATURES */
+.jw-features {
+  text-align: left;
+  margin-top: 20px;
+  list-style: none;
+    /* font-family: var(--font-primary); */
+
+}
+
+.jw-features li {
+  margin: 10px 0;  
+  font-family: var(--font-primary);
+
+
+}
+
+.jw-features .yes {
+  color: rgb(255, 255, 255);
+  /* color: var(--primary-light); */
+}
+
+.jw-features .no {
+  color: red;
+    color:var(--accent);
+
+}
+
+/* BUTTON */
+.jw-btn {
+  display: inline-block;
+  /* border: 2px solid red; */
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: var(--radius);
+  background: var(--gradient);
+  color: black;
+  text-decoration: none;
+
+  background: var(--accent);
+    color: var(--text-dark);
+    border-radius: var(--radius);
+    transition: var(--transition);
+
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .jw-card.recommended {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,117 @@
+.whychoose-about{ 
+  color: var(--primary);
+
+}
+
+
+/* Background Section */
+.jw-section-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.jw-section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.jw-container {
+  position: relative;
+  z-index: 2;
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ================= ABOUT ================= */
+.jw-about-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.jw-about-text {
+  margin-top: 20px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  /* opacity: 0; */
+  transform: translateY(40px);
+  transition: var(--transition);
+}
+
+.jw-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ================= MISSION ================= */
+.jw-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+}
+
+.jw-mission-card {
+  padding: 30px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  transform: translateY(40px);
+  /* opacity: 0; */
+  transition: var(--transition);
+}
+
+.jw-mission-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ================= TEAM ================= */
+.jw-team-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.jw-team-card {
+  width: 200px;
+  padding: 20px;
+  background: var(--secondary);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.jw-team-card img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.jw-team-card:hover {
+  transform: scale(1.05);
+}
+
+/* ================= STATS ================= */
+.jw-stats-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.jw-stat-box h3 {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .jw-section-bg {
+    background-attachment: scroll;
+  }
+}

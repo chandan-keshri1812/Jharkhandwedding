@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+
+
+    /* __________________________ */
+    /* 🌟 Brand Colors */
+    --primary: #C8A96A;
+    /* Gold */
+    --primary-dark: #A8894F;
+    /* Hover gold */
+    --primary-light: #E6D3A3;
+    /* Soft gold */
+
+    /* 🖤 Neutrals */
+    --secondary: #111111;
+    /* Dark sections */
+    --accent: #C8A96A;
+    /* Accent same as gold */
+
+    /* 🎨 Backgrounds */
+    --bg-main: #F5F1E8;
+    /* Main cream bg */
+    --bg-light: #FFFFFF;
+    /* Section bg */
+    --bg-dark: #111111;
+    /* Dark section */
+    --bg-card: #1A1A1A;
+    /* Dark cards */
+
+    /* ✍️ Text */
+    --text-main: #2B2B2B;
+    /* Main text */
+    --text-dark: #000000;
+    --text-light: #FFFFFF;
+    --text-muted: #6B6B6B;
+    /* Secondary text */
+    --text-fade: #A0A0A0;
+    /* Light text */
+
+
+    /* ______________________________ */
+
+
+
+    /* GRADIENT */
+    --gradient-main: linear-gradient(135deg, #C8A96A, #A8894F);
+    --gradient-seco: linear-gradient(135deg, #1A1A1A, #2B2B2B;);
+
+    /* DARK GRADIENTS */
+  --gradient-dark-main: linear-gradient(135deg, #111111, #1A1A1A);
+  --gradient-dark-gold: linear-gradient(135deg, #111111, #C8A96A);
+  --gradient-soft-dark: linear-gradient(135deg, #1A1A1A, #2B2B2B);
+  --gradient-gold: linear-gradient(135deg, #C8A96A, #E6D3A3);
+  --gradient-overlay: linear-gradient(
+    to bottom,
+    rgba(17,17,17,0.7),
+    rgba(17,17,17,0.9)
+  );
+
+    /* FONTS */
+    /* font-family: "Playfair Display", serif; */
+    /* font-family: "Poppins", sans-serif; */
+
+    /* --font-primary: "Lora", serif;
+  --font-heading: "Great Vibes", cursive;
+  --font-basic: sans-serif; */
+    --font-primary: "Poppins", sans-serif;
+    --font-heading: "Playfair Display", serif;
+    --font-basic: sans-serif;
+
+    /* SPACING */
+    --padding: 10px;
+    --radius: 20px;
+
+    /* SHADOW */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+    /* TRANSITION */
+    --transition: 0.3s ease;
+}
+
+
+.gallery-sect-page {
+    /* border: 5px solid red; */
+    background-color: var(--gradient-seco);
+    /* background-color:var(--gradient); */
+    background: var(--gradient-soft-dark);
+    position: relative;
+  z-index: 1;
+}
+
+.gallery-sect-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("./IMAGE\ \ \(44\).jpg") center/cover no-repeat;
+  opacity: 0.1;
+
+  z-index: -1;
+}
+
+
+.jw-gallery-page {
+    padding: 80px 20px;
+    background: var(--bg-main);
+    /* border: 2px solid rgba(68, 0, 255, 0.986); */
+
+}
+
+
+/* FILTER */
+.jw-filter-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+    /* border: 2px solid red; */
+    display: flex;
+}
+
+.jw-filter-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--secondary);
+    color: var(--bg-light);
+    cursor: pointer;
+    transition: var(--transition);
+    /* border: 2px solid red; */
+}
+
+.jw-filter-buttons button:hover {
+    background: var(--primary);
+}
+
+/* MASONRY */
+.jw-gallery-grid {
+    column-count: 3;
+    column-gap: 15px;
+}
+
+.jw-gallery-item {
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.jw-gallery-item img {
+    width: 100%;
+    display: block;
+    transition: var(--transition);
+}
+
+/* HOVER GLASS */
+.jw-gallery-item::after {
+    content: "View";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    opacity: 1;
+    transition: var(--transition);
+}
+
+.jw-gallery-item:hover::after {
+    opacity: 0;
+}
+
+.jw-gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+
+
+/* _________________ */
+
+.jw-slider {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+    /* border: 2px solid red; */
+}
+
+.jw-slider-track {
+    display: flex;
+    width: max-content;
+    animation: jwSlide 20s linear infinite;
+    gap: 20px;
+}
+
+.jw-slider img {
+    width: 250px;
+    height: 50%;
+    width: 50vw;
+    border-radius: var(--radius);
+    flex-shrink: 0;
+}
+
+/* AUTO ANIMATION */
+@keyframes jwSlide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover */
+.jw-slider:hover .jw-slider-track {
+    animation-play-state: paused;
+}
+
+/* ______________________ */
+
+.jw-video-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+
+
+
+.jw-video-grid iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: var(--radius);
+}
+
+
+/* ________________ */
+
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .jw-gallery-grid {
+        column-count: 1;
+    }
+
+    .jw-slider img {
+        width: 250px;
+        height: 50%;
+        width: 100vw;
+        border-radius: var(--radius);
+        flex-shrink: 0;
+    }
+}

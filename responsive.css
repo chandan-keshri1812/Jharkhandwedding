@@ -91,11 +91,13 @@
     .nav-links {
         display: none;
         position: absolute;
-        Left: 0;
+        right: 0;
         top: 100%;
         /* border: 3px solid red; */
         gap: 3px;
-        background: linear-gradient(135deg, #8E2DE2, #FF6A88);
+        /* background: linear-gradient(135deg, #8E2DE2, #FF6A88); */
+        background: #333;
+
         flex-direction: row;
         justify-content: center;
         width: 100%;
@@ -103,7 +105,7 @@
         transform: translateY(-200%);
         transition: 0.5s;
         z-index: 11;
-        /* border: 1px solid rgb(255, 9, 173); */
+        /* border: 5px solid rgb(255, 9, 173); */
 
     }
 
@@ -113,14 +115,15 @@
     }
 
     .nav-active {
-        /* border: 10px solid red; */
+        /* border: 3px solid rgb(3, 58, 117); */
         display: flex;
-        /* width: 53%; */
-        height: 6vh;
+        width: 37%;
+        height: 70vh;
         top: 60px;
-        left: 0px;
+        right: 0px;
         transform: translateY(0);
-        background-color: #3d3d3d;
+        background: linear-gradient(135deg, #C8A96A, #A8894F);
+        flex-direction: column;
         z-index: 15;
         /* position: relative; */
 
@@ -217,10 +220,16 @@
     .hero-video {
         /* border: 5px solid rgb(0, 13, 255); */
         width: 100%;
-        height: 22vh;
+        height: 62vh;
         /* background-color: beige; */
     }
 
+    .imag-hero-main {
+        height: 35vh;
+        /* width: 120%; */
+
+        border: 2px solid green;
+    }
 
     .video-container {
         /* border: 2px solid rgb(166, 67, 67); */
@@ -241,7 +250,7 @@
         height: 100vh;
         transform: translate(-50%, -50%);
         pointer-events: none;
-        /* disables click */
+
 
         width: 100%;
         height: 100%;
@@ -255,7 +264,32 @@
 
     .hero {
         width: 100%;
-        height: 30vh;
+        height: 70vh;
+        /* justify-content: space-between; */
+        /* margin-top: 30px; */
+        /* border: 12px solid red; */
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        /* opacity: .1; */
+
+
+    }
+
+    .hero::before {
+        opacity: .8;
+    }
+
+
+
+    .hero-div {
+        padding: 0px 18px;
+        margin: 18px 12px;
+        position: absolute;
+        top: 65%;
+        left: 0px;
+
+
     }
 
     .text-5xl {
@@ -265,6 +299,8 @@
 
     .mt-4-text-lg {
         font-size: 10px;
+        margin-top: 0px;
+        /* margin-bottom: 12px; */
 
     }
 
@@ -283,7 +319,13 @@
         width: 100%;
     }
 
-    .hero-sec-btn {}
+
+    /*  ---------------------------*/
+
+    .services {
+        padding: 27px 20px;
+
+    }
 
     /* ________________________________ */
 
@@ -308,6 +350,7 @@
     }
 
     .about-image {
+        margin-top: 30px;
         width: 80%;
     }
 
@@ -324,6 +367,9 @@
     }
 
     /* ___________________ service se c */
+
+
+
     .section-title {
         font-size: 2rem;
     }
