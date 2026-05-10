@@ -219,7 +219,7 @@ animate();
 console.log("call to action  section start, ");
 
 // Set target date (EDIT THIS)
-const targetDate1 = new Date("2026-04-20T23:59:59").getTime();
+const targetDate1 = new Date("2026-05-30T23:59:59").getTime();
 // console.log("hello chandan")
 console.log(targetDate1);
 
