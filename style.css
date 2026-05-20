@@ -250,7 +250,7 @@ button:hover {
 /* ---------------------------------------------------------- */
 .div-nabar {
 
-box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   height: 60px;
   width: 100%;
   top: 0;
@@ -583,11 +583,11 @@ box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.2
 }
 
 .image-box-hero1 {
-width: 250px;
+  width: 250px;
   height: 330px;
 
-  background: url("./sw2.jpg") center/cover no-repeat;
 
+  background: url("./JW_IMG_12.jpg") center/cover no-repeat;
   border-radius: 20px;
   /* rounded corners */
   overflow: hidden;
@@ -599,7 +599,7 @@ width: 250px;
   width: 250px;
   height: 330px;
 
-  background: url("./IMAGE\ \ \(5\).jpg") center/cover no-repeat;
+  background: url("./JW_IMG_13.png") center/cover no-repeat;
 
   border-radius: 20px;
   /* rounded corners */
